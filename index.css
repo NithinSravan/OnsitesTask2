@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Sen&display=swap');
+*{
+    font-family: 'Sen';
+    margin:0;
+    box-sizing: border-box;
+}
+header{
+    width:100%;
+    display: flex;
+    justify-content: baseline;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+}
+header h1{
+    margin-left: 5px;
+}
+header img{
+    height:5vh ;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+input,button{
+    width: 35%;
+    outline: none;
+    margin-bottom: 10px;
+    padding: 8px 5px;
+    border:1px solid rgb(45, 230, 91);
+}
+button{
+    cursor: pointer;
+    background-color:  rgb(45, 230, 91);
+}
