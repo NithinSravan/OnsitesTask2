@@ -1,6 +1,6 @@
 const clienId='48c3cbb5e39041b68aed3c064b9f33b4';
 const clientSecret='8d099d93bce744be97f0f09eafc1f0f8';
-
+let token;
 
 let  artistOne;
 let artistTwo;
@@ -49,8 +49,6 @@ const getToken=async ()=>{
 
 const getInput=async()=>{
 
-  const token=await getToken()
-  
   const resultOne=await fetch(`https://api.spotify.com/v1/search?q=${artistId1.value}&type=artist`,{
     method:'GET',
     headers:{
@@ -72,7 +70,7 @@ const getInput=async()=>{
 }
 
 const getRelArtists=async (id)=>{
-  const token=await getToken()
+
   const result=await fetch("https://api.spotify.com/v1/artists/"+id+"/related-artists",{
     method:'GET',
     headers:{
@@ -86,7 +84,6 @@ const getRelArtists=async (id)=>{
 
 const dispArtists=async(id)=>{
 
-  const token=await getToken()
   const result=await fetch("https://api.spotify.com/v1/artists/"+id,{
     method:'GET',
     headers:{
@@ -146,4 +143,6 @@ const buildTree=async()=>{
   }
 }
 
-
+window.onload=async ()=>{
+  token=await getToken()
+}
